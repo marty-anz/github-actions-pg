@@ -17,7 +17,7 @@ jobs:
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - id: test
         name: "test gcloud-kms-decrypt"
-        uses: https://github.com/marty-anz/gcloud-kms-decrypt-steps-action@latest
+        uses: github.com/marty-anz/gcloud-kms-decrypt-steps-action@latest
         with:
           kms-key-name: "projects/xxx/locations/kkk/keyRings/yyy/cryptoKeys/zzz"
       - run: echo secret ${{ steps.test.outputs.secret }}
