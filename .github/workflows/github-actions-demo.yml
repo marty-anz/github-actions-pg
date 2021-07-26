@@ -9,6 +9,7 @@ jobs:
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       - name: Check out repository code
         uses: actions/checkout@v2
+      - run: echo ${GITHUB_WORKSPACE}
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
       - name: List files in the repository
@@ -23,3 +24,8 @@ jobs:
           cipher-text: aGVsbG8=
       - run: echo secret ${{ steps.test.outputs.secret }}
         shell: bash
+  Another-job:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${GITHUB_WORKSPACE}
+      
