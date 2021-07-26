@@ -25,9 +25,10 @@ jobs:
       - run: echo secret ${{ steps.test.outputs.secret }}
         shell: bash
   Another-job:
-    needs: Explore-Githut-Actions
+    needs: Explore-GitHub-Actions
     runs-on: ubuntu-latest
     steps:
       - run: echo ${GITHUB_WORKSPACE}
       - run: ls ${GITHUB_WORKSPACE}
+      
       
