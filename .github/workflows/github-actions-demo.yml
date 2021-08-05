@@ -21,8 +21,13 @@ jobs:
         shell: bash
   Another-job:
     needs: Explore-GitHub-Actions
+      
+    
     runs-on: ubuntu-latest
     steps:
+      - name: "check master"
+        if: github.ref == 'refs/heads/master'
+        run: echo "run on master"
       - run: echo ${GITHUB_WORKSPACE}
       - run: ls ${GITHUB_WORKSPACE}
   Third-job:
